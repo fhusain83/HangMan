@@ -1,0 +1,53 @@
+
+.Fatima
+{
+	margin: auto;
+	width:50%;
+
+
+}
+.MyImage{
+padding: 10px 0;
+  margin: 0;
+  margin-bottom: 20px;
+Width:600px;
+Height:100px;
+padding-left: 100px;
+}
+.MyImageModified{
+
+Width:100px;
+Height:100px;
+
+}
+
+.Words
+{
+float:Right;
+}
+
+
+.GetStarted,.Wins,.CurrentWord,.Guesses,.GuessLetters,.already
+{
+	font-weight: bold;
+	font-weight: 700;
+}
+
+
+h1{
+	text-align: center;
+}
+[class*='col']{
+	float:Left;
+}
+.col1{
+	width: 20%;
+}
+.col2{
+	width: 40%;
+	height: 100%;
+}
+.grid{
+	
+	padding-left: 500px;
+}

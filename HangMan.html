@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset ="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>This is a Hang Man Game</h1>
+<div class="Fatima">
+<img src="captain-planet.jpg" class="MyImage"/>
+   </div>
+<div class="grid">
+
+
+
+<div class="col1">
+<img src="captain-planet.jpg"
+ class="MyImageModified"/>
+</div>
+<div class="col2">
+<a class="GetStarted"> Press any Key to Get Started</a>
+
+
+
+<br/>
+<br/>
+<a class="Wins"><span id="Win"></span></a>
+<br/>
+<br/>
+<a class="CurrentWord"><p id="CurrentWorda"></p>Current Word: ----------
+</a>
+<br/>
+<br/>
+<a class="Words"><span id="Word"></span></a>
+<a class="Guesses">No Of Guesses Remaining</a>
+<br/>
+<br/>
+<a class="Number"><span id=Num></span></a>
+
+<a class="already">Letters Already Guessed</a>
+<p id="GuessLettera"></p>
+
+</div>
+</div>
+
+
+<script type='text/javascript'>
+
+var computerwords=["superman","batman",
+"spiderman","ironman"];
+ var Wins=0;
+
+var count;
+var allguesses="";
+document.onkeyup=function(event)
+{
+
+	var computerGuess =computerwords[Math.floor(Math.random() * computerwords.length)];
+    count=computerGuess.length;
+    var userguess=event.key;
+    var glue="";
+
+document.getElementById("GuessLettera").InnerHTML=userguess;
+
+
+
+
+
+allguesses=allguesses+userguess;
+
+//alert(userguess+" "+computerGuess);
+var arr=["_","_","_","_","_","_","_","_","_","_","_","_"];
+alert(computerGuess.indexOf(userguess));
+
+for(var c=0;c<allguesses.length;c++)
+{
+	if(computerGuess.indexOf(allguesses[c])!=-1)
+{
+
+	arr[computerGuess.indexOf(userguess)]=allguesses[c];
+}
+	
+}
+
+
+
+
+       
+        for(var u=0;u<computerGuess.length;u++)
+	       {glue+" "+arr[u];}
+           
+            alert("glue"+glue);
+            
+            document.getElementById("Word").InnerHtml=glue;
+            count=count-1;
+            alert(count);
+            document.getElementById("Num").InnerHtml=count;
+         
+
+
+         if(count==0)
+          
+	          document.getElementById("Word").InnerHtml=computerGuess;
+              if(computerGuess.ignoreCase===allguesses.ignoreCase)
+                 {   Wins++;
+                   	document.getElementById("Win").InnerHtml=Wins;
+                 }
+          
+
+
+};
+
+
+
+
+</script>
+
+
+</body>
+</html>
